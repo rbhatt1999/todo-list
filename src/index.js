@@ -1,6 +1,7 @@
-import "./style.css";
-import dots from "./icons/dots.png"
-let todoList = [
+import './style.css';
+import dots from './icons/dots.png';
+
+const todoList = [
   {
     index: 0,
     description: 'Awesome Books with ES6',
@@ -25,11 +26,10 @@ let todoList = [
 
 const outputList = document.querySelector('.output-list');
 
-todoList.forEach((item)=>{
+todoList.forEach((item) => {
   const div = document.createElement('div');
   div.className = 'list-items';
-  div.innerHTML= `<label for="checkbox"><input class="checkbox-input" type="checkbox" name="checkbox" id="${item.index}"> ${item.description}</label>
-  <img src="${dots}">`
+  div.innerHTML = `<label for="checkbox"><input class="checkbox-input" type="checkbox" name="checkbox" id="${item.index}"> ${item.description}</label>
+  <img src="${dots}">`;
   outputList.appendChild(div);
-})
-
+});
