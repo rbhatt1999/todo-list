@@ -2,21 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TODO List</title>
 </head>
 <body>
   <main>
-    <div class="wapper">
-      <div class="headline"><h1> Today's To Do</h1><img src="./icons/reload.png" alt="reload"></div>
-      <form action="#" class = "todo-input">
-        <input id="item" type="text" name="item" placeholder="Add to your list..">
-        <button type="submit"> <img src= "./icons/enter-key.svg" alt="enter"></button>
-      </form>
-      <div class="output-list"></div>
-      <button class="task-complete">Clear all completed</button>
-    </div>
+    <section class="wrapper">
+      <h1 class="main-header">- ToDo List App -</h1>
+      <div class="main-container d-flex-2 m-24">
+        <div class="input-container d-flex-2 p-sm-iii">
+          <div class="todo-header flex p-sm-i b-b">
+            <h2>Today's To Do</h2>
+            <i class="fas fa-sync resize"></i>
+          </div>
+
+          <div class="input-content flex p-sm-i b-b">
+            <input type="text" id="todo-input" placeholder="Add to your list...">
+            <button type="submit" id="add-todo-btn" class="bg-white">
+                <i class="fas fa-plus resize"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="task-container">
+          <ul class="task-list"></ul>
+          <div class="btn-container d-flex-3">
+            <button type="button" class="clear-all fs">Clear all completed</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
