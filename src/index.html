@@ -5,7 +5,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODO List</title>
+  <title>ToDo List App</title>
 </head>
 <body>
   <main>
@@ -19,7 +19,7 @@
           </div>
 
           <div class="input-content flex p-sm-i b-b">
-            <input type="text" id="todo-input" placeholder="Add to your list...">
+            <input type="text" id="todo-input" class="w-100" placeholder="Add to your list...">
             <button type="submit" id="add-todo-btn" class="bg-white">
                 <i class="fas fa-plus resize"></i>
             </button>
@@ -30,7 +30,7 @@
         <div class="task-container">
           <ul class="task-list"></ul>
           <div class="btn-container d-flex-3">
-            <button type="button" class="clear-all fs">Clear all completed</button>
+            <button type="button" class="clear-all fs" id="clear-all-btn">Clear all completed</button>
           </div>
         </div>
       </div>

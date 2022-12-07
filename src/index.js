@@ -3,6 +3,8 @@
 import './style.css';
 import statusUpdate from './statusUpdate.js';
 
+const clearAllCompletedTaskBtn = document.querySelector('.clear-all');
+
 const taskList = document.querySelector('.task-list');
 const todoInput = document.getElementById('todo-input');
 const addToDoBtn = document.getElementById('add-todo-btn');
@@ -88,18 +90,28 @@ const editTask = (task) => {
 
 addToDoBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if (!todoInput.value) return;
+  if (!todoInput.value) {
+    todoInput.focus();
+    return;
+  }
 
   if (editIndex != null) {
     saveEdittedTask(editIndex);
     editIndex = null;
   } else {
-    saveToDos({ index: (storedToDos.length + 1), description: todoInput.value, completed: false });
+    saveToDos({ index: storedToDos.length + 1, description: todoInput.value, completed: false });
   }
 
   getToDos();
   todoInput.value = '';
 });
+
+const clearAllCompletedTask = () => {
+  storedToDos = storedToDos.filter((todo) => !todo.completed);
+  resetIndexes(storedToDos);
+  localStorage.setItem('toDos', JSON.stringify(storedToDos));
+  getToDos();
+};
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && todoInput.value) {
@@ -107,9 +119,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', getToDos);
 taskList.addEventListener('click', statusUpdate);
+clearAllCompletedTaskBtn.addEventListener('click', statusUpdate);
+
+document.addEventListener('DOMContentLoaded', getToDos);
 
 export {
-  deleteTask, completedTask, editTask,
+  deleteTask, completedTask, editTask, clearAllCompletedTask,
 };
