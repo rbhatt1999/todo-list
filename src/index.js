@@ -69,7 +69,7 @@ const completedTask = (task) => {
   getToDos();
 };
 
-const resetIndexes = (arr) => arr.forEach((item, idx) => { item.index = idx+1; });
+const resetIndexes = (arr) => arr.forEach((item, idx) => { item.index = idx + 1; });
 
 const deleteTask = (task) => {
   const item = storedToDos[task];
