@@ -69,7 +69,7 @@ const completedTask = (task) => {
   getToDos();
 };
 
-const resetIndexes = (arr) => arr.forEach((item, idx) => { item.index = idx; });
+const resetIndexes = (arr) => arr.forEach((item, idx) => { item.index = idx+1; });
 
 const deleteTask = (task) => {
   const item = storedToDos[task];
@@ -94,7 +94,7 @@ addToDoBtn.addEventListener('click', (e) => {
     saveEdittedTask(editIndex);
     editIndex = null;
   } else {
-    saveToDos({ index: storedToDos.length, description: todoInput.value, completed: false });
+    saveToDos({ index: (storedToDos.length + 1), description: todoInput.value, completed: false });
   }
 
   getToDos();
