@@ -60,7 +60,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://rbhatt1999.github.io/todo-list/) project is not deploy right now...
+- [Live Demo Link](https://rbhatt1999.github.io/todo-list) project is not deploy right now...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
